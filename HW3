@@ -1,0 +1,32 @@
+##Q9##
+
+def get_determinant(M):
+   import numpy as np
+   A=np.array(M)
+   if len(A)==len(A[0]) and 10>=len(A):
+      determ=np.linalg.det(A)
+      return determ
+   else:
+      print 'the matrix is not nxn with n<=10'
+
+##Q10##
+
+def find_area(p1,p2,p3):
+   import numpy as np
+   M=np.matrix([[p1[0],p2[0],p3[0]],[p1[1],p2[1],p3[1]],[1,1,1]])
+   determ=get_determinant(M)
+   area=abs(determ/2.0)
+   return area
+
+##Q11##
+   import numpy as np
+   from numpy import linalg as LA
+
+   M3=np.matrix([[4,3,2],[1,2,6],[5,8,1]])
+
+   w,v=LA.eig(M3)
+
+   print 'the eigenvalues of the matrix are ' + str(w)
+   print 'the first eigenvector is ' +str(v[0])
+   print 'the second eigenvector is ' +str(v[1])
+   print 'the third eigenvector is ' +str(v[2])
